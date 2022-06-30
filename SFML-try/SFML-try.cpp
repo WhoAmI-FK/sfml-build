@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <chrono>
+
+/*
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(400, 400), "StrangeSmile");
@@ -48,3 +50,4 @@ int main()
 		window.display();
 	}
 }
+*/

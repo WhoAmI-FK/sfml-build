@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D91FA1B9-6C4E-39AB-9A4F-0AA47D39F6B3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/User/source/repos/sfml-try/SFML-2.5.1-src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/sfml-try/SFML-2.5.1-src -BC:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s --check-stamp-file C:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeRCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeSystem.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\Config.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfig.cmake.in;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/User/source/repos/sfml-try/SFML-2.5.1-src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/sfml-try/SFML-2.5.1-src -BC:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s --check-stamp-file C:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeRCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeSystem.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\Config.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfig.cmake.in;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/User/source/repos/sfml-try/SFML-2.5.1-src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/sfml-try/SFML-2.5.1-src -BC:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s --check-stamp-file C:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeRCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeSystem.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\Config.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfig.cmake.in;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/User/source/repos/sfml-try/SFML-2.5.1-src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/User/source/repos/sfml-try/SFML-2.5.1-src -BC:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s --check-stamp-file C:/Users/User/source/repos/sfml-try/SFML-2.5.1-slns/x64-s/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.24\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.24\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeCXXCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeRCCompiler.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\3.24.0-rc1\CMakeSystem.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\Config.cmake;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfig.cmake.in;C:\Users\User\source\repos\sfml-try\SFML-2.5.1-src\cmake\SFMLConfigDependencies.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\ZERO_CHECK.proj">
+      <Project>{247F1ABC-63C7-39A9-83E5-825D626F91BE}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\ftp\ftp.vcxproj">
+      <Project>{2AF7F3CD-A0AB-3EB9-99D6-5DA3148C58ED}</Project>
+      <Name>ftp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\island\island.vcxproj">
+      <Project>{F2E8763F-877D-377A-94A2-846BB3509644}</Project>
+      <Name>island</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\joystick\joystick.vcxproj">
+      <Project>{5D25DE22-BC9D-374E-AFF6-3FD40685CF70}</Project>
+      <Name>joystick</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\opengl\opengl.vcxproj">
+      <Project>{0428681E-87F3-32BD-BD7A-79EE159CA281}</Project>
+      <Name>opengl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\pong\pong.vcxproj">
+      <Project>{896371D9-7F02-3AEF-9F27-1F94C42CDFDC}</Project>
+      <Name>pong</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\Audio\sfml-audio.vcxproj">
+      <Project>{F53A53D8-8419-32EC-B5C2-FA8FC0191D4D}</Project>
+      <Name>sfml-audio</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\Graphics\sfml-graphics.vcxproj">
+      <Project>{909AC65E-84B1-383C-80EC-03C4CC077C44}</Project>
+      <Name>sfml-graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\Main\sfml-main.vcxproj">
+      <Project>{8DAC2FBA-A852-3A39-BE29-8B3D1C72165F}</Project>
+      <Name>sfml-main</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\Network\sfml-network.vcxproj">
+      <Project>{A0352BC0-EC69-30AB-9468-F4DEFA172ECB}</Project>
+      <Name>sfml-network</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\System\sfml-system.vcxproj">
+      <Project>{2AE743E1-02E1-3AF3-825C-F7D37EFF7644}</Project>
+      <Name>sfml-system</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\src\SFML\Window\sfml-window.vcxproj">
+      <Project>{93B56B19-34A6-31FC-9ECE-F2B8AC1B592E}</Project>
+      <Name>sfml-window</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\shader\shader.vcxproj">
+      <Project>{9A087923-D71E-3798-A30B-3D363AF108F2}</Project>
+      <Name>shader</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\sockets\sockets.vcxproj">
+      <Project>{99CFB245-8A0C-377A-ABD7-8B2F8400E4A3}</Project>
+      <Name>sockets</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\sound\sound.vcxproj">
+      <Project>{EDB0866A-028F-38B3-B55B-E5E237ED0A2D}</Project>
+      <Name>sound</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\sound_capture\sound-capture.vcxproj">
+      <Project>{3206F398-59A6-3FBF-9E38-CFF2A68C1274}</Project>
+      <Name>sound-capture</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\voip\voip.vcxproj">
+      <Project>{2C0C537C-C857-38BD-91B8-BC7829A581DE}</Project>
+      <Name>voip</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\win32\win32.vcxproj">
+      <Project>{8277061D-7F48-387B-B3F2-D04BAB14A4B3}</Project>
+      <Name>win32</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\User\source\repos\sfml-try\SFML-2.5.1-slns\x64-s\examples\window\window.vcxproj">
+      <Project>{2A66F093-FC5E-368C-8A47-74E355BBBF7A}</Project>
+      <Name>window</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

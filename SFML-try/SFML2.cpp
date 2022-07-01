@@ -45,6 +45,9 @@ int main()
 			//if (_player.getPosition().y < 412.0f);
 			_player.move(0.0f, +0.4f);
 		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+			_player.move(0.0f, -1.0f);
+		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
 			window.clear();
 			window.close();

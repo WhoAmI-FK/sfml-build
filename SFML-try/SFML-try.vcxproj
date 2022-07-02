@@ -155,8 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GeometricalFigures.cpp" />
     <ClCompile Include="SFML-try.cpp" />
     <ClCompile Include="SFML2.cpp" />
+    <ClCompile Include="Sprites.cpp" />
+    <ClCompile Include="Tetris.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

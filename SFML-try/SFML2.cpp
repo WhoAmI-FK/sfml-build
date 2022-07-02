@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 
 
-int main()
+int func()
 {
 	sf::RenderWindow window(sf::VideoMode(512, 512), "MiniGame", sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
 	sf::RectangleShape _player(sf::Vector2f(100.0f, 100.0f));

@@ -24,28 +24,61 @@ struct Point
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(320, 480), "The Game!");
+	sf::RenderWindow window(sf::VideoMode(320, 480), "Tetris");
 	sf::Texture texture;
 	texture.loadFromFile("C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-tetris\\tiles.png");
 	sf::Sprite sprite(texture);
 	sprite.setTextureRect(sf::IntRect(0, 0, 18, 18));
 	int dx = 0;
-	bool rotate = 0;
+	bool rotate = false;
 	float timer = 0, delay = 0.3;
 	sf::Clock _clock;
 	while(window.isOpen())
 	{
+		float time = _clock.getElapsedTime().asSeconds();
+		_clock.restart();
+		timer += time;
 		sf::Event _ev;
 		while (window.pollEvent(_ev))
 		{
-			if (_ev.type == sf::Event::Closed) window.close();
+			if (_ev.type == sf::Event::Closed) 
+				window.close();
+			
+			if (_ev.type == sf::Event::KeyPressed)
+			{
+				if (_ev.key.code == sf::Keyboard::Up) rotate = true;
+				else if (_ev.key.code == sf::Keyboard::Left) dx = -1;
+				else if (_ev.key.code == sf::Keyboard::Right) dx = 1;
+			}
+			for (int i = 0; i < 4; i++) a[i].x += dx;
+
+			if (rotate)
+			{
+				Point p = a[1];
+				for (int i = 0; i < 4; i++)
+				{
+					int x = a[i].y - p.y;
+					int y = a[i].x - p.x;
+					a[i].x = p.x - x;
+					a[i].y = p.y + y;
+				}
+			}
+			if (timer > delay)
+			{
+				for (int i = 0; i < 4; i++) a[i].y += 1;
+				timer = 0;
+			}
 		}
 		int n = 3;
-		for (int i = 0; i < 4; i++)
-		{
-			a[i].x = figures[n][i] % 2;
-			a[i].y = figures[n][i] / 2;
+		if (a[0].x == 0) {
+			for (int i = 0; i < 4; i++)
+			{
+				a[i].x = figures[n][i] % 2;
+				a[i].y = figures[n][i] / 2;
+			}
 		}
+		dx = 0;
+		rotate = false;
 
 		window.clear(sf::Color::White);
 		for (int i = 0; i < 4; i++)

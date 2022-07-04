@@ -1,5 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <time.h>
+#include <algorithm>
+#include <iostream>
 const int M = 20;
 const int N = 10;
 
@@ -23,11 +25,17 @@ struct Point
 
 bool check()
 {
-	for (int i = 0; i < 4; i++)
-		if (a[i].x < 0 || a[i].x >= N || a[i].y >= M) return false;
+	for (int i = 0; i < 4; i++) {
+		if (a[i].x < 0 || a[i].x >= N || a[i].y >= M ) return false;
 		else if (field[a[i].y][a[i].x]) return false;
-
+	}
 	return true;
+}
+bool lost() {
+	for (int i = 0; i < N; i++) {
+		if (field[0][i]) return true;
+	}
+	return false;
 }
 
 
@@ -57,9 +65,9 @@ int main()
 		sf::Event _ev;
 		while (window.pollEvent(_ev))
 		{
-			if (_ev.type == sf::Event::Closed) 
+			if (_ev.type == sf::Event::Closed)
 				window.close();
-			
+
 			if (_ev.type == sf::Event::KeyPressed)
 			{
 				if (_ev.key.code == sf::Keyboard::Up) rotate = true;
@@ -67,14 +75,35 @@ int main()
 				else if (_ev.key.code == sf::Keyboard::Right) dx = 1;
 			}
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) delay = 0.05;
-			
-			for (int i = 0; i < 4; i++)
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) delay = 0.05;
+		/* need fixes for random start */
+		/*
+		for (int i = 0; i < 4; i++) {
+			if (a[i].y == 0) {
+				int r = rand() % 17;
+				auto func = [r](const auto& a) {
+					return (a.x + r) > N;
+				};
+				while (std::find_if(a, a + 4, func) != (a + 4)) {
+					r = rand() % 17;
+				}
+				for (int i = 0; i < 4; i++) {
+					b[i] = a[i];
+					a[i].x += r;
+				}
+			}
+		}
+		*/
+		for (int i = 0; i < 4; i++)
 			{
 				b[i] = a[i];
 				a[i].x += dx;
 			}
-			
+		if (lost()) {
+			std::cout << "You lose!";
+			return 0;
+		}
 			if (!check())
 			{
 				for (int i = 0; i < 4; i++)
@@ -119,8 +148,8 @@ int main()
 					}
 				}
 				timer = 0;
+		
 			}
-		}
 
 		int k = M - 1;
 		for (int i = M - 1; i > 0; i--)
@@ -147,7 +176,7 @@ int main()
 
 		dx = 0;
 		rotate = false;
-
+		delay = 0.3;
 		window.clear(sf::Color::White);
 		window.draw(sprite_background);
 		for (int i = 0; i < M; i++)
@@ -167,6 +196,7 @@ int main()
 			sprite.move(28, 31);
 			window.draw(sprite);
 		}
+
 		window.draw(sprite_frame);
 		window.display();
 	}

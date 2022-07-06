@@ -44,11 +44,12 @@ int main()
 {
 	srand(time(0));
 	sf::RenderWindow window(sf::VideoMode(320, 480), "Tetris");
-	sf::Texture texture,texture_background,texture_frame;
+	sf::Texture texture,texture_background,texture_frame,texture_lose;
 	texture.loadFromFile("C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-tetris\\tiles.png");
 	texture_background.loadFromFile("C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-tetris\\background.png");
 	texture_frame.loadFromFile("C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-tetris\\frame.png");
-	sf::Sprite sprite(texture), sprite_background(texture_background), sprite_frame(texture_frame);
+	texture_lose.loadFromFile("C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-tetris\\gameover.png");
+	sf::Sprite sprite(texture), sprite_background(texture_background), sprite_frame(texture_frame),sprite_lose(texture_lose);
 	sprite.setTextureRect(sf::IntRect(0, 0, 18, 18));
 	int dx = 0;
 	bool rotate = false;
@@ -102,6 +103,15 @@ int main()
 				a[i].x += dx;
 			}
 		if (lost()) {
+			// need to be refactored
+			sprite_lose.setScale(0.2, 0.2);
+			window.draw(sprite_lose);
+			while (window.pollEvent(_ev)) {
+				if (_ev.type == sf::Event::KeyPressed) {
+					return 0;
+				}
+				window.display();
+			}
 			std::cout << "You lose!";
 			return 0;
 		}

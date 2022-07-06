@@ -95,6 +95,7 @@ int main()
 			}
 		}
 		*/
+	
 		for (int i = 0; i < 4; i++)
 			{
 				b[i] = a[i];
@@ -189,9 +190,23 @@ int main()
 				window.draw(sprite);
 			}
 		}
+		bool isSet = false;
+		for (int i = 0; i < 4; i++)
+		{
+			if (a[i].y == 0 && !isSet) {
+				int r = rand() % N;
+				isSet = true;
+				for (int i = 0; i < 4; i++) {
+					a[i].x = (a[i].x + (r)) % N;
+				}
+				break;
+
+			}
+		}
 		for (int i = 0; i < 4; i++)
 		{
 			sprite.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));
+
 			sprite.setPosition(a[i].x * 18, a[i].y * 18);
 			sprite.move(28, 31);
 			window.draw(sprite);
@@ -199,6 +214,9 @@ int main()
 
 		window.draw(sprite_frame);
 		window.display();
+		for (int i = 0; i < 4; i++) {
+			if (a[i].y == 0) isSet = false;
+		}
 	}
 
 	return 0;

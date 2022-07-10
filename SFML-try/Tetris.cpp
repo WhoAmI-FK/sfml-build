@@ -40,7 +40,7 @@ bool lost() {
 
 
 
-int main()
+int tetris()
 {
 	srand(time(0));
 	sf::RenderWindow window(sf::VideoMode(320, 480), "Tetris");

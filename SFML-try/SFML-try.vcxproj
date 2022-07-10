@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeometricalFigures.cpp" />
+    <ClCompile Include="Miner.cpp" />
     <ClCompile Include="SFML-try.cpp" />
     <ClCompile Include="SFML2.cpp" />
     <ClCompile Include="Sprites.cpp" />

@@ -4,6 +4,12 @@
 #include <ctime>
 
 
+
+#ifdef DEBUG
+#include <iostream>
+#endif // DEBUG
+
+
 /* Required fixes
 *  1. add new features
 *  2. Code Refactor
@@ -14,7 +20,10 @@ typedef sf::Sound sfSound;
 typedef sf::Texture sfTexture;
 typedef sf::Sprite sfSprite;
 typedef sf::Event sfEvent;
+typedef sf::Font sfFont;
 typedef sf::Color sfColor;
+typedef sf::Text sfText;
+
 int main()
 {
 	srand(static_cast<unsigned int>(time(0)));
@@ -23,7 +32,9 @@ int main()
 	int gridLogic[12][12];
 	int gridView[12][12];
 	bool selected = false;
-	bool end_game = false;
+	bool showMenu = false;
+	int mines_found = 0;
+	int mines = 0;
 	sfSound sPlayer;
 	// soundefx
 	std::pair <sfSBuffer, std::shared_ptr<sfSound>> gameBegin;
@@ -38,8 +49,6 @@ int main()
 	gameBegin.second.get()->setBuffer(gameBegin.first);
 	gameBegin.second.get()->play();
 	// soundefx
-	int mines_found = 0;
-	int mines = 0;
 
 	sfTexture t;
 	t.loadFromFile("images-minesweeper/tiles.jpg");
@@ -50,7 +59,11 @@ int main()
 		for (int j = 1; j <= 10; j++)
 		{
 			gridView[i][j] = 10;
-			if (rand() % 5 == 0) gridLogic[i][j] = 9;
+			if (rand() % 5 == 0)
+			{
+				gridLogic[i][j] = 9;
+				mines++;
+			}
 			else gridLogic[i][j] = 0;
 		}
 	}
@@ -78,9 +91,9 @@ int main()
 		sf::Vector2i pos = sf::Mouse::getPosition(app);
 		int x = pos.x / w;
 		int y = pos.y / w;
-		if (x < 0) x = 0;
+		if (x < 0 || x > app.getSize().x) x = 0;
 
-		if (y < 0) y = 0;
+		if (y < 0 || y>app.getSize().y) y = 0;
 		sfEvent e;
 		while (app.pollEvent(e))
 		{
@@ -95,7 +108,14 @@ int main()
 					gridView[x][y] = gridLogic[x][y];
 					selected = true;
 				}
-				else if (e.key.code == sf::Mouse::Right) gridView[x][y] = 11;
+				else if (e.key.code == sf::Mouse::Right && gridView[x][y] != 11) {
+					gridView[x][y] = 11;
+					if (gridLogic[x][y] == 9 && gridView[x][y] == 11) mines_found++;
+				}
+				else {
+					gridView[x][y] = 10;
+					if (gridLogic[x][y] == 9 && selected == false) mines_found--;
+				}
 			}
 		}
 		if (selected == true)
@@ -104,7 +124,27 @@ int main()
 			{
 				bombExplosion.second.get()->setBuffer(bombExplosion.first);
 				bombExplosion.second.get()->play();
+				showMenu = true;
 			}
+			else {
+				// check
+				int random = 1 + rand() % 2;
+				for (int s = x - random; s <= (x + random); s++)
+				{
+					for (int d = y - random; d <= (y + random); d++)
+					{
+						int n = 1 + rand() % 4;
+						if (n == 1 && gridLogic[s][d] != 9)
+							gridView[s][d] = gridLogic[s][d];
+						n = 0;
+					}
+				}
+			}
+		}
+
+		if (mines_found == mines)
+		{
+			showMenu = true;
 		}
 
 		app.clear(sfColor::White);
@@ -119,7 +159,48 @@ int main()
 
 		selected = false;
 		app.display();
+		if (showMenu)
+		{
+			sf::Clock clock;
+			while (clock.getElapsedTime().asMilliseconds() < 1500);
+
+			app.close();
+		}
 	}
+	if (showMenu)
+	{
+		sf::RenderWindow end(sf::VideoMode(360, 60), "Game Over!");
+		sfFont font;
+		font.loadFromFile("C:\\Windows\\Fonts\\Calibrib.ttf");
+		while (end.isOpen())
+		{
+			sfText text("", font, 20);
+			sfText stat("", font, 17);
+
+			if (mines_found != mines) {
+				text.setString("GAME OVER!");
+			}
+			else text.setString("YOU WIN!");
+
+			stat.setString("Bombs found " + std::to_string(mines_found) + " out of " + std::to_string(mines) + "!");
+			// add statistic
+			text.setString("Game Over!");
+			text.setFillColor(sfColor::Black);
+			text.setPosition(sf::Vector2f(10, 5));
+			stat.setFillColor(sfColor::Black);
+			stat.setPosition(sf::Vector2f(10, 25));
+			sfEvent endEv;
+			while (end.pollEvent(endEv))
+			{
+				if (endEv.type == sfEvent::Closed) end.close();
+			}
+			end.clear(sfColor::White);
+			end.draw(text);
+			end.draw(stat);
+			end.display();
+		}
+	}
+
 
 
 	return 0;

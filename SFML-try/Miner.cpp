@@ -2,7 +2,7 @@
 #include <SFML/Audio.hpp>
 #include <utility>
 #include <ctime>
-
+#include "TypeDefs.h"
 
 
 #ifdef DEBUG
@@ -15,16 +15,9 @@
 *  2. Code Refactor
 */
 
-typedef sf::SoundBuffer sfSBuffer;
-typedef sf::Sound sfSound;
-typedef sf::Texture sfTexture;
-typedef sf::Sprite sfSprite;
-typedef sf::Event sfEvent;
-typedef sf::Font sfFont;
-typedef sf::Color sfColor;
-typedef sf::Text sfText;
 
-int main()
+
+int Minesweeper()
 {
 	srand(static_cast<unsigned int>(time(0)));
 	sf::RenderWindow app(sf::VideoMode(400, 400), "Minesweeper!");

@@ -10,3 +10,6 @@ typedef sf::Event sfEvent;
 typedef sf::Font sfFont;
 typedef sf::Color sfColor;
 typedef sf::Text sfText;
+typedef sf::IntRect sfIntRect;
+typedef sf::Mouse sfMouse;
+typedef sf::Vector2i sfVector2i;

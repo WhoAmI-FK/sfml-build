@@ -7,6 +7,11 @@ int main()
 {
 	sfRenderWindow window(sfVideoMode(256, 256), "Tags!");
 	sfTexture texture;
+	sfSound sPlayer;
+
+	std::pair<sfSBuffer, std::shared_ptr<sfSound>> move;
+	move.first.loadFromFile("sounds-tags\\ogg\\move.ogg");
+	move.second = std::make_shared<sfSound>(sPlayer);
 	window.setFramerateLimit(60);
 	texture.loadFromFile("images-tags/15.png");
 	
@@ -40,6 +45,8 @@ int main()
 			{
 				if (ev.key.code == sfMouse::Left)
 				{
+					move.second.get()->setBuffer(move.first);
+					move.second.get()->play();
 					sfVector2i position = sfMouse::getPosition(window);
 					int x = position.x / blockWidth + 1;
 					int y = position.y / blockWidth + 1;

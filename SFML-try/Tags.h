@@ -1,9 +1,8 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+#include "SFML_LIBS.h"
 #include "TypeDefs.h"
 
 
-int main()
+int Tags()
 {
 	sfRenderWindow window(sfVideoMode(256, 256), "Tags!");
 	sfTexture texture;

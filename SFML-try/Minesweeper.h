@@ -1,5 +1,4 @@
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+#include "SFML_LIBS.h"
 #include <utility>
 #include <ctime>
 #include "TypeDefs.h"
@@ -8,13 +7,6 @@
 #ifdef DEBUG
 #include <iostream>
 #endif // DEBUG
-
-
-/* Required fixes
-*  1. add new features
-*  2. Code Refactor
-*/
-
 
 
 int Minesweeper()

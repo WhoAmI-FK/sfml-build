@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+#include "SFML_LIBS.h"
 #include <time.h>
 #include <algorithm>
 #include <iostream>
@@ -40,7 +40,7 @@ bool lost() {
 
 
 
-int tetris()
+int Tetris()
 {
 	srand(time(0));
 	sf::RenderWindow window(sf::VideoMode(320, 480), "Tetris");

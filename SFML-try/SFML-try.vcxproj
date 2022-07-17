@@ -156,14 +156,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeometricalFigures.cpp" />
-    <ClCompile Include="Miner.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Minesweeper.cpp" />
+    <ClCompile Include="Minesweeper.h" />
     <ClCompile Include="SFML-try.cpp" />
     <ClCompile Include="SFML2.cpp" />
     <ClCompile Include="Sprites.cpp" />
     <ClCompile Include="Tags.cpp" />
+    <ClCompile Include="Tags.h" />
     <ClCompile Include="Tetris.cpp" />
+    <ClCompile Include="Tetris.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="SFML_LIBS.h" />
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

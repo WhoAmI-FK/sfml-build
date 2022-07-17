@@ -1,18 +1,15 @@
 #include "Menu.h"
 // Need fixes
 
-Menu::Menu(std::size_t num,...)
-{
-	va_list vl;
-	va_start(vl, num);
-	for (int i = 0; i < num; i++)
-	{
-		std::function<void()> _store = va_arg(vl, std::function<void()>);
+Menu::Menu(std::list<std::function<void()>> _list) {
+	_numOfGames = 1;
+	for (auto t : _list) {
+		_menu[_numOfGames] = t;
+		_numOfGames++;
 	}
-	va_end(vl);
 }
 
 
 void Menu::showMenu(void) {
-	_menu[1]();
+	_menu[3]();
 }

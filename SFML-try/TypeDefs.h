@@ -13,3 +13,4 @@ typedef sf::Text sfText;
 typedef sf::IntRect sfIntRect;
 typedef sf::Mouse sfMouse;
 typedef sf::Vector2i sfVector2i;
+typedef sf::Music sfMusic;

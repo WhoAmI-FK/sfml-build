@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "Minesweeper.h"
 #include "Tags.h"
+#include "Tetris.h"
 #include <iostream>
 #include <typeinfo>
 //#include "Tetris.h"
@@ -9,7 +10,7 @@ int main()
 {
 
 #ifdef TESTING
-	Menu m(2,Tags,Minesweeper);
+	Menu m({ std::function<void()>(Tags),std::function<void()>(Minesweeper),std::function<void()>(Tetris)});
 	m.showMenu();
 #endif 
 

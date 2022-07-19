@@ -10,6 +10,7 @@ int main()
 {
 
 #ifdef TESTING
+	using namespace __mini_games;
 	Menu m({ std::function<void()>(Tags),std::function<void()>(Minesweeper),std::function<void()>(Tetris)});
 	m.showMenu();
 #endif 

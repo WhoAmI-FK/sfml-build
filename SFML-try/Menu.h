@@ -7,18 +7,23 @@
 #include "TypeDefs.h"
 #define GAMES 2
 
-namespace __mini_games {
+namespace __mini_games 
+{
 
-	class MenuUIEl {
+	class MenuUIEl 
+	{
 	protected:
 		MenuUIEl(const char*);
 		sfSprite _sprite;
 		sfTexture _texture;
 	public:
 		MenuUIEl() = delete;
+		void setScale(const float& factorX, const float& factorY);
+		void setPosition(const float& x, const float& y);
 	};
 
-	class MenuLogo: public MenuUIEl {
+	class MenuLogo: public MenuUIEl 
+	{
 	public:
 		MenuLogo(const char*);
 		MenuLogo(const MenuLogo&) = delete;
@@ -27,6 +32,12 @@ namespace __mini_games {
 		MenuLogo& operator=(MenuLogo&&) = delete;	
 		sfSprite getSprite() const;
 		void setTexture();
+		
+	};
+
+	class GameTab : public MenuUIEl 
+	{
+
 	};
 
 	class Menu

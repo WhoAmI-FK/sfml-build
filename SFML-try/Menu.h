@@ -3,9 +3,10 @@
 #include <functional>	
 //#include <thread>
 #include <list>
+#include <vector>
 #include "SFML_LIBS.h"
 #include "TypeDefs.h"
-#define GAMES 2
+#define GAMES 3
 
 namespace __mini_games 
 {
@@ -20,6 +21,8 @@ namespace __mini_games
 		MenuUIEl() = delete;
 		void setScale(const float& factorX, const float& factorY);
 		void setPosition(const float& x, const float& y);
+		sfSprite getSprite() const;
+		void setTexture();
 	};
 
 	class MenuLogo: public MenuUIEl 
@@ -30,14 +33,16 @@ namespace __mini_games
 		MenuLogo& operator=(const MenuLogo&) = delete;
 		MenuLogo(MenuLogo&&) = delete;
 		MenuLogo& operator=(MenuLogo&&) = delete;	
-		sfSprite getSprite() const;
-		void setTexture();
+
 		
 	};
 
 	class GameTab : public MenuUIEl 
 	{
-
+	public:
+		GameTab(const char*);
+	
+	
 	};
 
 	class Menu
@@ -59,11 +64,14 @@ namespace __mini_games
 		Menu(Menu&&) = delete;
 		Menu& operator=(Menu&&) = delete;
 		void showMenu(void);
+		void initGameTabs(std::vector<std::unique_ptr<GameTab>>&);
 	private:
 		std::map<key, game> _menu;
 		std::size_t _numOfGames;
 		sfEvent _menuEvent;
 		sfMusic _music;
+		std::vector<std::unique_ptr<GameTab>> _gamesUI;
 		MenuLogo _logo;
 	};
+
 }

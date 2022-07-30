@@ -4,7 +4,11 @@
 #define tags_logo "C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-menu\\15_logo.png"
 #define minesweeper_logo "C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-menu\\minesweeper-logo.png"
 #define tetris_logo "C:\\Users\\User\\source\\repos\\sfml-try\\SFML-try\\images-menu\\tetris-logo.png"
-// Need fixes
+/*
+*	FIX LIST:
+*	1. BAD FUNCTION CALL
+*	2. RELATIVE PATH FOR PICS && MUSIC
+*/
 
 using namespace __mini_games;
 
@@ -100,6 +104,13 @@ void Menu::showMenu(void) {
 						uiEl->setNormal();
 					}
 					_gamesUI[_selected]->setShadow();
+				}
+				if (_menuEvent.key.code == sfKeyboard::Enter || _menuEvent.key.code == sfKeyboard::Space)
+				{
+					_music.pause();
+					// resolve bad function call case
+					_menu[_selected]();
+					_music.play();
 				}
 			}
 		}

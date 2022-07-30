@@ -48,7 +48,7 @@ void MenuUIEl::setPosition(const float& x, const float& y)
 }
 
 Menu::Menu(std::list<std::function<void()>> _list)
-	:_logo(logo_path)
+	:_logo(logo_path),_selected(0)
 {
 	if (!_music.openFromFile(music_path)) return;
 
@@ -59,25 +59,47 @@ Menu::Menu(std::list<std::function<void()>> _list)
 	}
 	initGameTabs(_gamesUI);
 }
-
-
+			
+void MenuUIEl::setNormal()
+{
+	_sprite.setColor(sfColor(255, 255, 255, 255));
+}
+void MenuUIEl::setShadow() {
+	_sprite.setColor(sfColor(255, 255, 255, 128));
+}
 
 void Menu::showMenu(void) {
 	sfRenderWindow window(sf::VideoMode(),"MENU", sf::Style::Fullscreen);
 	_music.setLoop(true);
 	_music.play();
 	_music.setVolume(70);
-	while (window.isOpen())
-	{
-		while (window.pollEvent(_menuEvent))
+		while (window.isOpen())
 		{
-			if (_menuEvent.type == sfEvent::Closed)
+			while (window.pollEvent(_menuEvent))
 			{
-				window.close();
-			}
+				if (_menuEvent.type == sfEvent::Closed)
+				{
+					window.close();
+				}
 			if (_menuEvent.type == sfEvent::KeyPressed) {
 				if (_menuEvent.key.code == sfKeyboard::Escape) {
 					window.close();
+				}
+				if (_menuEvent.key.code == sfKeyboard::Left)
+				{
+					_selected = (_selected + 1) % 3;
+					for (auto& uiEl : _gamesUI) {
+						uiEl->setNormal();
+					}
+					_gamesUI[_selected]->setShadow();
+				}
+				if (_menuEvent.key.code == sfKeyboard::Right)
+				{
+					_selected =  _selected==0 ? 2 : _selected-1;
+					for (auto& uiEl : _gamesUI) {
+						uiEl->setNormal();
+					}
+					_gamesUI[_selected]->setShadow();
 				}
 			}
 		}

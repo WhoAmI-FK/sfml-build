@@ -21,6 +21,8 @@ namespace __mini_games
 		MenuUIEl() = delete;
 		void setScale(const float& factorX, const float& factorY);
 		void setPosition(const float& x, const float& y);
+		void setShadow();
+		void setNormal();
 		sfSprite getSprite() const;
 		void setTexture();
 	};
@@ -70,6 +72,7 @@ namespace __mini_games
 		std::size_t _numOfGames;
 		sfEvent _menuEvent;
 		sfMusic _music;
+		uint8_t _selected;
 		std::vector<std::unique_ptr<GameTab>> _gamesUI;
 		MenuLogo _logo;
 	};

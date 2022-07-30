@@ -11,7 +11,7 @@ int main()
 
 #ifdef TESTING
 	using namespace __mini_games;
-	Menu m({ std::function<void()>(Tags),std::function<void()>(Minesweeper),std::function<void()>(Tetris)});
+	Menu m({ std::function<void()>(Tetris),std::function<void()>(Tags),std::function<void()>(Minesweeper)});
 	m.showMenu();
 #endif 
 

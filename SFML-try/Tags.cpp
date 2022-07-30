@@ -2,7 +2,7 @@
 
 void Tags()
 {
-	sfRenderWindow window(sfVideoMode(256, 256), "Tags!");
+	sfRenderWindow window(sfVideoMode(), "Tags!", sf::Style::Fullscreen);
 	sfTexture texture;
 	sfSound sPlayer;
 
@@ -37,7 +37,12 @@ void Tags()
 			if (ev.type == sfEvent::Closed) {
 				window.close();
 			}
-
+			if (ev.type == sfEvent::KeyPressed)
+			{
+				if (ev.key.code == sfKeyboard::Escape) {
+					window.close();
+				}
+			}
 			if (ev.type == sfEvent::MouseButtonPressed)
 			{
 				if (ev.key.code == sfMouse::Left)
@@ -45,8 +50,8 @@ void Tags()
 					move.second.get()->setBuffer(move.first);
 					move.second.get()->play();
 					sfVector2i position = sfMouse::getPosition(window);
-					int x = position.x / blockWidth + 1;
-					int y = position.y / blockWidth + 1;
+					int x = (position.x-800) / blockWidth + 1;
+					int y = (position.y-400) / blockWidth + 1;
 
 					int dx = 0;
 					int dy = 0;
@@ -90,7 +95,7 @@ void Tags()
 			for (int j = 0; j < 4; j++)
 			{
 				int n = grid[i + 1][j + 1];
-				sprite[n].setPosition(i * blockWidth, j * blockWidth);
+				sprite[n].setPosition(i * blockWidth + 800, j * blockWidth+400);
 				window.draw(sprite[n]);
 			}
 		}

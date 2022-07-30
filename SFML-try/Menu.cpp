@@ -56,7 +56,7 @@ Menu::Menu(std::list<std::function<void()>> _list)
 {
 	if (!_music.openFromFile(music_path)) return;
 
-	_numOfGames = 1;
+	_numOfGames = 0;
 	for (auto t : _list) {
 		_menu[_numOfGames] = t;
 		_numOfGames++;
@@ -108,8 +108,10 @@ void Menu::showMenu(void) {
 				if (_menuEvent.key.code == sfKeyboard::Enter || _menuEvent.key.code == sfKeyboard::Space)
 				{
 					_music.pause();
+					window.close();
 					// resolve bad function call case
 					_menu[_selected]();
+					window.create(sf::VideoMode(), "MENU", sf::Style::Fullscreen);
 					_music.play();
 				}
 			}
